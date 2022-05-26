@@ -55,6 +55,7 @@
 ```
     console.log(typeof undefined)
 ```
+* in this exemple, the output will we _undefined_
 
 ### Block Scope vs Function Scope
 * Function Scope: When a variable is declared inside a function, it is only accessible within that function and cannot be used outside that function.
@@ -82,3 +83,11 @@
 * **_var_** variables: similar to let, but it is **function scope**
 
 ### we can dont declare a variable, but whe we do this, javaScript creates a property on the global object
+
+### Basic operators in javaScript
+* Exponent: we use the o perator ** to elevate a number. Example:
+```
+2 ** 3
+```
+* this is equal to 2^3 = 2*2*2 = 8
+* Comparision operators: >, <, <=, >=, ===
