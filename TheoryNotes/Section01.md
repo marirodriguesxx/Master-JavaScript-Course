@@ -1,4 +1,4 @@
-# Section 01 - Theory notes
+# JavaScript Fundamentals Part 1 - Theory notes
 
 ### What is javascript?
 * javascript is a high-level object-oriented, multi-paradigm programming language
@@ -89,5 +89,130 @@
 ```
 2 ** 3
 ```
-* this is equal to 2^3 = 2*2*2 = 8
+* this is equal to 2^3 = 2x2x2 = 8
+*Math operators: +, -, /, *, %
 * Comparision operators: >, <, <=, >=, ===
+
+### Template Literals
+ * We can write a string in a more normal way.
+ * can assemble multiple pieces into one final string
+ * to write a template literals we use backtickss
+ * example:
+ ```
+ const newString = `I'm ${variableName}`;
+ ```
+
+### \n\ = new line inside a string
+
+### Actually, we can use backticks to write ant regular string
+* examples:
+```
+console.log(`A regular string ...`);
+```
+* backsticks is usefull to create a multline string, like:
+```
+console.log(`String
+with
+multiple
+lines`)
+```
+
+### Type conversion and coercion
+* Type Conversion: when you manually convert from a type to another
+* Type Coercion: is whe javaScript automatically converts types behind the scenes for us. But it happens implicitly, completely hidden from us
+    - Type Coercion happens whenever an operator is dealing with two values that have different types
+* We can convert a value to a number using
+```
+Number(value)
+```
+* We can convert a value to a string using
+```
+String(value)
+```
+* **_Falsy values_**: are values that are not exactly false, but will become false when we try to convert them into a boolean. In javaScrit, there are 5 falsy values:
+    - 0
+    - ""
+    - undefined
+    - null
+    - NaN
+
+### Equality Operators: == vs.===
+* === : is called **_strict equality operator_**, is strict because it does not perform type coercion. And so it only returns true to when both values are exactly the same
+* == : is calles **_loose equality operator_**, in this case, the operator does type coercion. This can introduce many hard to find bug in the code. So, a general rule for clean code is to avoid tis operator.
+* Examples:
+    - will return true
+        ```
+        18 === 18;
+        ```
+    - will return false
+        ```
+        "18" === 18;
+        ```
+    - will return true
+        ```
+        "18" == 18;
+        ```
+
+### Operators: != vs. !===
+* **_strict_** : !== (good practice)
+* **_loose_** : !=
+
+### Switch case statement
+* Each case use strict comparision
+    - Example:
+        ````
+            switch(condition) {
+                case 1:
+                    line of code 1;
+                    line of code 2;
+                    line of code 3;
+                    break;
+                case 2:
+                    line of code 1;
+                    break;
+            }
+        ````
+* we can actually execute multiple lines of code, without needing curly braces for that
+* we can run the same code for two different values. 
+    - Example:
+        ````
+        switch(condition) {
+            case 1:
+            case 2:
+                lines of code 1;
+                lines of code 2;
+            default:
+                lines of code 1;
+        }
+        ````
+* **_default_**: its like de else statement. When some value its not valid, we can use dafult to warn about it
+
+### Difference between Statements and Expressions
+* **_Expression_**: is a piece of code that produces a value
+    - examples:
+        ```
+        3+4
+        ```
+        ```
+        1991
+        ```
+* **_Statements_**: is a bigger piece of code that is executed and wich does not produce a value on itself
+
+### Remember: An operator always produces a values. So, an operator is a expression
+
+### The conditional (ternary) operator
+* Example:
+````
+const age = 10;
+age >= 18 ? console.log('I like to drink wine') 
+            : console.log('i dont like to drink wine')
+````
+* we can use the ternary operator inside a template literal:
+````
+console.log(`i like to drink ${age >= 18 ? 'wine' : 'water'}`)
+````
+* perfect for "quick" decisions, not for big parts of code
+
+
+
+
